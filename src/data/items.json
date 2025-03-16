@@ -3,24 +3,28 @@
     "id": 1,
     "name": "Cube",
     "price": 10.99,
-    "imgUrl": "/images/cube.jpg"
+    "imgUrl": "/images/cube.jpg",
+    "inStock": 10
   },
   {
     "id": 2,
     "name": "Treadmill",
     "price": 1199,
-    "imgUrl": "/images/treadmill.jpg"
+    "imgUrl": "/images/treadmill.jpg",
+    "inStock": 8
   },
   {
     "id": 3,
     "name": "Burger",
     "price": 1.05,
-    "imgUrl": "/images/burger.jpg"
+    "imgUrl": "/images/burger.jpg",
+    "inStock": 100
   },
   {
     "id": 4,
     "name": "Bicycle",
     "price": 14000,
-    "imgUrl": "/images/bicycle.jpg"
+    "imgUrl": "/images/bicycle.jpg",
+    "inStock": 20
   }
 ]

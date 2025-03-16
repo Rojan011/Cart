@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import Container from "./Container";
 import { useShoppingCart } from "../context/ShoppingCartContext";
-import { ShoppingCart } from "lucide-react";
+
 
 export function Navbar() {
   const { openCart, cartQuantity } = useShoppingCart();

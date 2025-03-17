@@ -6,7 +6,8 @@ import { About } from "./pages/About";
 import { Navbar } from "./components/Navbar";
 import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 import { Bounce, ToastContainer } from "react-toastify";
-import { FabButton } from "./components/FabButton";
+import { FabButton } from "./components/FabButton/FabButton";
+import { AutoSuggestExample } from "./pages/Search";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/store" element={<Store />} />
           <Route path="/about" element={<About />} />
+          <Route path="/search" element={<AutoSuggestExample/>}/>
         </Routes>
       </Container>
       <FabButton />

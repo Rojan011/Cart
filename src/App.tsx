@@ -5,10 +5,25 @@ import { Store } from "./pages/Store";
 import { About } from "./pages/About";
 import { Navbar } from "./components/Navbar";
 import { ShoppingCartProvider } from "./context/ShoppingCartContext";
+import { Bounce, ToastContainer } from "react-toastify";
+import { FabButton } from "./components/FabButton";
 
 function App() {
   return (
     <ShoppingCartProvider>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition={Bounce}
+      />
       <Navbar />
       <Container className="mb-4">
         <Routes>
@@ -17,6 +32,7 @@ function App() {
           <Route path="/about" element={<About />} />
         </Routes>
       </Container>
+      <FabButton />
     </ShoppingCartProvider>
   );
 }

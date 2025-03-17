@@ -1,6 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import { Trash2 } from "lucide-react";
 import { formatCurrency } from "../utils/formatCurrency";
 import { useShoppingCart } from "../context/ShoppingCartContext";
+import { toast } from "react-toastify";
+import { Bounce } from "react-toastify/unstyled";
 
 type StoreItemProps = {
   id: number;
@@ -15,7 +18,7 @@ export function StoreItem({
   name,
   price,
   imgUrl,
-  inStock
+  inStock,
 }: StoreItemProps) {
   const {
     getItemQuantity,
@@ -24,64 +27,62 @@ export function StoreItem({
     removeFromCart,
   } = useShoppingCart();
   const quantity = getItemQuantity(id);
+  const notifyAddToCart = () => {
+    toast.success(`1 ${name} Added to the Cart`, {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
+  };
 
+  const notifyIncreasedCart = () => {
+    toast.success(`${quantity + 1} ${name}s added to cart`, {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
+  };
+  const notifyDecreasedCart = () => {
+    toast.info(`${quantity - 1} ${name}s  remaining in cart`, {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
+  };
 
-
- 
+  const notifyRemovedFromCart = () => {
+    toast.info(`${name}s Removed From The Cart`, {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
+  };
 
   return (
-    // <div className="flex flex-col gap-3 bg-white p-4 rounded-lg shadow-md h-full">
-    //   {/* Image */}
-    //   <img
-    //     src={imgUrl}
-    //     alt={name}
-    //     className="w-full h-48 object-cover rounded-t-lg"
-    //   />
-
-    //   {/* Name & Price */}
-    //   <div className="flex justify-between w-full items-center mb-4">
-    //     <span className="text-xl font-semibold">{name}</span>
-    //     <span className="text-gray-500">{formatCurrency(price)}</span>
-    //   </div>
-
-    //   {/* Add to Cart / Quantity Controls */}
-    //   <div className="mt-auto w-full">
-    //     {quantity === 0 ? (
-    //       <button
-    //         className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full"
-    //         onClick={() => increaseCartQuantity(id)}
-    //       >
-    //         + Add to Cart
-    //       </button>
-    //     ) : (
-    //       <div className="flex justify-between items-center w-full">
-    //         {/* Quantity Controls */}
-    //         <div className="flex items-center gap-3">
-    //           <button
-    //             onClick={() => decreaseCartQuantity(id)}
-    //             className="bg-blue-500 text-white w-8 h-8 flex items-center justify-center rounded hover:bg-blue-600 transition duration-100 cursor-pointer"
-    //           >
-    //             -
-    //           </button>
-    //           <span className="text-2xl">{quantity}</span>
-    //           <button
-    //             onClick={() => increaseCartQuantity(id)}
-    //             className="bg-blue-500 text-white w-8 h-8 flex items-center justify-center rounded hover:bg-blue-600 transition duration-100 cursor-pointer"
-    //           >
-    //             +
-    //           </button>
-    //         </div>
-
-    //         {/* Remove Button */}
-    //         <button
-    //         onClick={() => removeFromCart(id)} className="bg-red-500 text-white px-3 py-2 rounded hover:bg-red-600 transition duration-300 cursor-pointer">
-    //           <Trash2 />
-    //         </button>
-    //       </div>
-    //     )}
-    //   </div>
-    // </div>
-
     <div className=" flex flex-col md:flex-row bg-white p-4 rounded-lg shadow-md h-full gap-6">
       {/* For the Left Part of photo */}
       <div className=" flex flex-1 flex-col gap-4 justify-center items-center">
@@ -118,12 +119,12 @@ export function StoreItem({
       {/* div X */}
       <div className="flex-1 flex-col p-2 gap-1">
         {/* div 1 */}
-        <div className="flex justify-center items-center mb-4 font-bold text-[20px]">
+        <div className="flex justify-center items-center mb-4 font-semibold text-[20px] text-purple-700">
           {name}
         </div>
 
         {/* div 2*/}
-        <div className="flex items-center justify-center sm:flex-row md:flex-col lg:flex-row  gap-4 mb-2">
+        <div className="flex items-center justify-center sm:flex-row md:flex-col lg:flex-row  gap-4 mb-4">
           {/* div 2a */}
           <div className="min-w-[100px] px-2 py-4 bg-[#f5f5dc] flex flex-1 rounded-lg justify-center items-center ">
             {formatCurrency(price)}
@@ -133,14 +134,14 @@ export function StoreItem({
         </div>
 
         {/* div 3 */}
-        <p className="text-gray-600 mb-2">
+        <p className="text-gray-600 mb-4">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
           quibusdam, maiores at harum voluptatem dolorem iste nostrum nihil ipsa
           velit.
         </p>
 
         {/* div 4 */}
-        <div className="flex mr-auto items-center gap-2 mb-2">
+        <div className="flex mr-auto items-center gap-2 mb-4">
           <span className="inline-block w-3 h-3 bg-green-500 rounded-full"></span>
           <div className="">{`${inStock} in Stock`}</div>
         </div>
@@ -149,8 +150,10 @@ export function StoreItem({
         <div>
           {quantity === 0 ? (
             <button
-              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full"
-              onClick={() => increaseCartQuantity(id)}
+              className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded w-full"
+              onClick={() => {
+                increaseCartQuantity(id), notifyAddToCart();
+              }}
             >
               + Add to Cart
             </button>
@@ -159,14 +162,18 @@ export function StoreItem({
               {/* Quantity Controls */}
               <div className="flex items-center gap-3">
                 <button
-                  onClick={() => decreaseCartQuantity(id)}
+                  onClick={() => {
+                    decreaseCartQuantity(id), notifyDecreasedCart();
+                  }}
                   className="bg-blue-500 text-white w-8 h-8 flex items-center justify-center rounded hover:bg-blue-600 transition duration-100 cursor-pointer"
                 >
                   -
                 </button>
                 <span className="text-2xl">{quantity}</span>
                 <button
-                  onClick={() => increaseCartQuantity(id)}
+                  onClick={() => {
+                    increaseCartQuantity(id), notifyIncreasedCart();
+                  }}
                   className="bg-blue-500 text-white w-8 h-8 flex items-center justify-center rounded hover:bg-blue-600 transition duration-100 cursor-pointer"
                 >
                   +
@@ -175,7 +182,9 @@ export function StoreItem({
 
               {/* Remove Button */}
               <button
-                onClick={() => removeFromCart(id)}
+                onClick={() => {
+                  removeFromCart(id), notifyRemovedFromCart();
+                }}
                 className="bg-red-500 text-white px-3 py-2 rounded hover:bg-red-600 transition duration-300 cursor-pointer"
               >
                 <Trash2 />

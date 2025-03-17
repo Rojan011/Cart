@@ -10,7 +10,7 @@ type ShoppingCartProps = {
 
 export function ShoppingCart({ isOpen }: ShoppingCartProps) {
   const { closeCart, cartItems } = useShoppingCart();
-
+  
   // Close the cart when clicking outside (on the backdrop)
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {

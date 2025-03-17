@@ -26,5 +26,41 @@
     "price": 14000,
     "imgUrl": "/images/bicycle.jpg",
     "inStock": 20
+  },
+  {
+    "id": 5,
+    "name": "Smartphone",
+    "price": 799.99,
+    "imgUrl": "/images/smartphone.jpg",
+    "inStock": 50
+  },
+  {
+    "id": 6,
+    "name": "Laptop",
+    "price": 1299.99,
+    "imgUrl": "/images/laptop.jpg",
+    "inStock": 15
+  },
+  {
+    "id": 7,
+    "name": "Headphones",
+    "price": 199.99,
+    "imgUrl": "/images/headphones.jpg",
+    "inStock": 30
+  },
+  {
+    "id": 8,
+    "name": "Smart Watch",
+    "price": 249.99,
+    "imgUrl": "/images/smartwatch.jpg",
+    "inStock": 25
+  },
+
+  {
+    "id": 9,
+    "name": "Basketball Rims",
+    "price": 299.99,
+    "imgUrl": "/images/basketball.jpg",
+    "inStock": 18
   }
 ]

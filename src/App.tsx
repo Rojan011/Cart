@@ -6,6 +6,7 @@ import { About } from "./pages/About";
 import { Navbar } from "./components/Navbar";
 import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 import { Bounce, ToastContainer } from "react-toastify";
+import { FabButton } from "./components/FabButton";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/about" element={<About />} />
         </Routes>
       </Container>
+      <FabButton />
     </ShoppingCartProvider>
   );
 }

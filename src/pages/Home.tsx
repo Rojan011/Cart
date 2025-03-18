@@ -1,7 +1,3 @@
-import Hero from "../components/Hero";
-
 export function Home() {
-  return (
-    <Hero/>
-  );
+  return <div>Hello Home</div>;
 }

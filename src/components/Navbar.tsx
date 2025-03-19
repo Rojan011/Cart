@@ -39,6 +39,16 @@ export function Navbar() {
           >
             About
           </NavLink>
+          <NavLink
+            to="/search"
+            className={({ isActive }) =>
+              isActive
+                ? "text-gray-900 font-bold hover:text-gray-500"
+                : "text-gray-400 hover:text-gray-600"
+            }
+          >
+            Search
+          </NavLink>
           <button
             onClick={openCart}
             className="ml-auto

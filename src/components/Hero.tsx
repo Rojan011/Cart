@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Hero = () => {
   return (
     <section className="relative w-full flex items-center justify-center bg-white" style={{height:'100vh'}}>

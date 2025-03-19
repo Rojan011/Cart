@@ -1,5 +1,3 @@
-import Hero from '../components/Hero'
-
 export function About() {
-  return <Hero/>;
+  return <div>Hello About</div>;
 }

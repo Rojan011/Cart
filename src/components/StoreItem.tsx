@@ -119,7 +119,7 @@ export function StoreItem({
       {/* div X */}
       <div className="flex-1 flex-col p-2 gap-1">
         {/* div 1 */}
-        <div className="flex justify-center items-center mb-4 font-semibold text-[20px] text-purple-700">
+        <div className="flex justify-center items-center mb-4 font-semibold text-[20px] text-[#004e89]">
           {name}
         </div>
 
@@ -150,7 +150,7 @@ export function StoreItem({
         <div>
           {quantity === 0 ? (
             <button
-              className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded w-full"
+              className="bg-[#004e89] hover:bg-[#1A659E] text-white font-bold py-2 px-4 rounded w-full"
               onClick={() => {
                 increaseCartQuantity(id), notifyAddToCart();
               }}
@@ -185,7 +185,7 @@ export function StoreItem({
                 onClick={() => {
                   removeFromCart(id), notifyRemovedFromCart();
                 }}
-                className="bg-red-500 text-white px-3 py-2 rounded hover:bg-red-600 transition duration-300 cursor-pointer"
+                className="bg-[#f0924a] text-white px-3 py-2 rounded hover:bg-[#FF6B35] transition duration-300 cursor-pointer"
               >
                 <Trash2 />
               </button>

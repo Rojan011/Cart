@@ -26,7 +26,7 @@ function App() {
         transition={Bounce}
       />
       <Navbar />
-      <Container className="mb-4">
+      <Container>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/store" element={<Store />} />

@@ -7,7 +7,7 @@
   right: 30px;
   bottom: 38px;
   border-radius: 50%;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(167, 77, 77, 0.1);
 }
 
 .fab button {
@@ -25,7 +25,7 @@
   height: 64px;
   border-radius: 50%;
   border: 0;
-  background: #e952de;
+  background: #FF6B35;
   border: 0;
   color: #f9f9f9;
   transition: 0.2s;
@@ -44,7 +44,7 @@
   width: 360px;
   height: 360px;
   translate: -50% -50%;
-  border: 80px solid #282633;
+  border: 80px solid #004e89;
   border-radius: 50%;
   rotate: -220deg;
   scale: 0.7;

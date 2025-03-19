@@ -6,7 +6,7 @@ import { useShoppingCart } from "../context/ShoppingCartContext";
 export function Navbar() {
   const { openCart, cartQuantity } = useShoppingCart();
   return (
-    <div className="bg-white shadow-sm mb-3 p-3 sticky top-0 z-10">
+    <div className="bg-white shadow-sm py-3 px-6  sticky top-0 z-10">
       <Container>
         <div className="flex gap-6 text-[20px] items-center ">
           <NavLink
@@ -70,7 +70,7 @@ export function Navbar() {
               />
             </svg>
 
-            <div className="rounded-full bg-red-600 text-white flex justify-center items-center w-[1.5rem] h-[1.5rem] absolute bottom-0 right-0 transform translate-x-[25%] translate-y-[25%]">
+            <div className={`rounded-full ${cartQuantity===0?'bg-red-600':'bg-green-600'} text-white flex justify-center items-center w-[1.5rem] h-[1.5rem] absolute bottom-0 right-0 transform translate-x-[25%] translate-y-[25%]`}>
               {cartQuantity}
             </div>
           </button>

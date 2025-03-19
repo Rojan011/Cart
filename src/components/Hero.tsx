@@ -11,7 +11,7 @@ const Hero = () => {
             "url('https://source.unsplash.com/1600x900/?fashion,shopping')",
         }}
       >
-        <div className="absolute inset-0 bg-[#EFEFD0] bg-opacity-50"></div>
+        <div className="absolute inset-0 bg-white bg-opacity-50"></div>
       </div>
       <div className="relative text-center text-black px-6">
         <h1 className="text-5xl font-extrabold md:text-6xl">

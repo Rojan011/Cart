@@ -76,7 +76,7 @@ function CarouselAbout() {
       <div className=" mt-10 px-3">
         <button
           type="button"
-          className="text-white bg-[#ff3535]  hover:bg-[#FF6B35] font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-[#ff3535] dark:hover:bg-[#FF6B35] focus:outline-none"
+          className="text-white bg-[#ff3535]  hover:bg-[#FF6B35] font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-[#ff3535] dark:hover:bg-[#FF6B35] focus:outline-none cursor-pointer"
           onClick={toggleMusic}
         >
           <div className="flex justify-center items-center">

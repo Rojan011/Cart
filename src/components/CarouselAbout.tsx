@@ -11,13 +11,22 @@ function CarouselAbout() {
   useEffect(() => {
     // Initialize audio when the component mounts
     audioRef.current = new Audio("/data/theme.mp3");
-    audioRef.current.loop = true;
+
+    // Add event listener to reset state when audio ends
+    const handleAudioEnd = () => {
+      setIsPlaying(false); // Reset play state when music finishes
+    };
+
+    if (audioRef.current) {
+      audioRef.current.addEventListener("ended", handleAudioEnd);
+    }
 
     return () => {
-      // Cleanup: Stop the music when leaving the page
+      // Cleanup: Stop the music when leaving the page and remove event listener
       if (audioRef.current) {
         audioRef.current.pause();
-        audioRef.current.currentTime = 0; // Reset the music
+        audioRef.current.currentTime = 0;
+        audioRef.current.removeEventListener("ended", handleAudioEnd);
       }
     };
   }, []);

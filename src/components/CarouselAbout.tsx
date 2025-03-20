@@ -38,7 +38,7 @@ function CarouselAbout() {
 
   return (
     <div className="flex flex-col items-center justify-center h-[800px] w-full ">
-      <div className="w-[1200px] max-w-full">
+      <div className="w-[1200px] max-w-full cursor-pointer">
         <ul className="flex group h-[500px] gap-2 justify-center">
           {persons.map((person, index) => (
             <li

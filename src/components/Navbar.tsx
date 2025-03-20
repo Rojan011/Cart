@@ -6,7 +6,7 @@ import { useShoppingCart } from "../context/ShoppingCartContext";
 export function Navbar() {
   const { openCart, cartQuantity } = useShoppingCart();
   return (
-    <div className="bg-white shadow-sm py-3 px-6  sticky top-0 z-10">
+    <div className="bg-white shadow-sm py-3 px-6  sticky top-0 z-50">
       <Container>
         <div className="flex gap-6 text-[20px] items-center ">
           <NavLink

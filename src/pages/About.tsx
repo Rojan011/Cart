@@ -1,3 +1,5 @@
+import CarouselAbout from "../components/CarouselAbout";
+
 export function About() {
-  return <div>Hello About</div>;
+  return <CarouselAbout/>;
 }

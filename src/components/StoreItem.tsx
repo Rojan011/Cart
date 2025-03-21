@@ -185,7 +185,7 @@ export function StoreItem({
                 onClick={() => {
                   removeFromCart(id), notifyRemovedFromCart();
                 }}
-                className="bg-[#f0924a] text-white px-3 py-2 rounded hover:bg-[#FF6B35] transition duration-300 cursor-pointer"
+                className="bg-[#ff3535] text-white px-3 py-2 rounded hover:bg-[#c70000] transition duration-300 cursor-pointer"
               >
                 <Trash2 />
               </button>
